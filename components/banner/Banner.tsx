@@ -85,16 +85,20 @@ export default function Banner() {
                 {item.subheading}
               </p>
 
-              <OpenGetQuoteDialog isOpen>
-                <Button
-                  className={cn(
-                    "flex items-center gap-3.5 bg-primary",
-                    "transition-all duration-1000 overflow-hidden",
-                    currentBannerIndex === index
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-16 opacity-0"
-                  )}
-                >
+              {/* <OpenGetQuoteDialog isOpen>
+                <Button className={cn("bg-primary")}>
+                  <Headset size={15} />
+                  Book Free Consultation
+                </Button>
+              </OpenGetQuoteDialog> */}
+
+              <OpenGetQuoteDialog
+                isOpen
+                className={cn(
+                  index === currentBannerIndex ? "opacity-100" : "opacity-0"
+                )}
+              >
+                <Button>
                   <Headset size={15} />
                   Book Free Consultation
                 </Button>

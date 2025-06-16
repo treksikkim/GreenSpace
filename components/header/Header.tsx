@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import NavItems from "./NavItems";
-import Button from "../Button";
-import { AlignJustify } from "lucide-react";
+import { AlignJustify, Headset } from "lucide-react";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
+import Button from "../Button";
 
 export default function Header() {
   return (
-    <div className="wrapper">
-      <div className="flex items-center justify-between py-3.5">
+    <div className="sticky top-0 z-50 backdrop-blur-2xl bg-[#ffffff8e]">
+      <div className="wrapper flex items-center justify-between py-3.5">
         <Image
           className="w-[10rem]"
           alt="Green Space Logo"
@@ -22,7 +22,10 @@ export default function Header() {
         </div>
 
         <OpenGetQuoteDialog isOpen>
-          <Button className="max-sm:hidden">Booking & Consultation</Button>
+          <Button className="max-sm:hidden">
+            <Headset size={15} />
+            Booking & Consultation
+          </Button>
         </OpenGetQuoteDialog>
 
         <AlignJustify className="max-sm:block hidden" />

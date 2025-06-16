@@ -1,16 +1,26 @@
 import { cn } from "@/utils/cn";
 import React from "react";
 
-export default function Button(props: React.ComponentProps<"button">) {
+export default function Button({
+  children,
+  className,
+  ...rest
+}: React.ComponentProps<"button">) {
   return (
-    <button
-      {...props}
-      className={cn(
-        "font-jost cursor-pointer active:scale-95 bg-primary text-white px-3.5 py-2 rounded-tr-xl rounded-bl-xl shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]",
-        props.className
-      )}
-    >
-      {props.children}
-    </button>
+    <div className="relative inline-block">
+      <button
+        className={cn(
+          (className =
+            "group cursor-pointer relative overflow-hidden px-8 py-4 inline-flex items-center gap-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"),
+          className
+        )}
+        {...rest}
+      >
+        {children}
+
+        <div className="bg-white/40 w-[60%] h-[100%] rotate-[45deg] absolute -left-[100%] transition-all duration-[1000ms] group-hover:left-[100%]"></div>
+      </button>
+      <div className="size-full absolute inset-0 bg-teal-500 -z-10 inline-block blur-[5px] rounded-full"></div>
+    </div>
   );
 }

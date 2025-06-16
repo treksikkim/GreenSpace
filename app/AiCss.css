@@ -1,0 +1,182 @@
+/* Enhanced Button with Moving Border Animation */
+#bottone1 {
+  position: relative;
+  padding: 16px 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00a693 0%, #009689 100%);
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 20px rgba(0, 150, 137, 0.4), 0 0 30px rgba(0, 229, 204, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: buttonGlow 2s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+/* Button glow animation */
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 150, 137, 0.4),
+      0 0 30px rgba(0, 229, 204, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 6px 25px rgba(0, 150, 137, 0.6),
+      0 0 40px rgba(0, 229, 204, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Button content */
+/* .btn-content {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  transition: transform 0.3s ease;
+} */
+
+/* Moving border element
+.moving-border {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 16px;
+  background: conic-gradient(
+    from 0deg,
+    #00e5cc,
+    #00d4c4,
+    #00c3b4,
+    #00b2a4,
+    #00a693,
+    #009689,
+    #00857b,
+    #00746d,
+    #00635f,
+    #00e5cc
+  );
+  opacity: 1;
+  z-index: 1;
+  animation: rotateBorder 3s linear infinite;
+}
+
+/* Inner background to hide the border inside */
+/* .moving-border::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  background: linear-gradient(135deg, #00a693 0%, #009689 100%);
+  border-radius: 12px;
+  z-index: -1;
+} */
+
+/* Rotating border animation */
+/* @keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+/* Hover effects */
+#bottone1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 35px rgba(0, 150, 137, 0.7), 0 0 50px rgba(0, 229, 204, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #00b8a6 0%, #00a693 100%);
+}
+
+#bottone1:hover .btn-content {
+  transform: scale(1.02);
+}
+
+/* Active/Click effects */
+#bottone1:active {
+  transform: translateY(0px) scale(0.98);
+  box-shadow: 0 4px 15px rgba(0, 150, 137, 0.5), 0 0 25px rgba(0, 229, 204, 0.4),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus effects for accessibility */
+#bottone1:focus {
+  outline: none;
+  box-shadow: 0 4px 20px rgba(0, 150, 137, 0.4), 0 0 30px rgba(0, 229, 204, 0.3),
+    0 0 0 3px rgba(0, 229, 204, 0.5);
+}
+
+/* Disabled state */
+#bottone1:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 10px rgba(0, 150, 137, 0.2);
+  animation: none;
+}
+
+#bottone1:disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 10px rgba(0, 150, 137, 0.2);
+}
+
+#bottone1:disabled .moving-border {
+  opacity: 0.3;
+  animation: rotateBorder 6s linear infinite;
+}
+
+/* Alternative moving border styles */
+.moving-border-btn.style-glow .moving-border {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 229, 204, 0.8),
+    rgba(0, 166, 147, 0.8),
+    rgba(0, 150, 137, 0.8),
+    rgba(0, 125, 108, 0.8),
+    rgba(0, 229, 204, 0.8)
+  );
+  filter: blur(1px);
+}
+
+.moving-border-btn.style-pulse .moving-border {
+  animation: movingBorder 3s linear infinite, pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #bottone1 {
+    padding: 14px 32px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #bottone1 {
+    padding: 12px 24px;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+}
+
+button:hover {
+  cursor: pointer;
+}

@@ -21,23 +21,23 @@ export const NAV_ITEMS: INav[] = [
     id: 2,
     name: "Design Gallery",
     slug: "/design-gallery",
-    // submenu: [
-    //   {
-    //     id: "2-1",
-    //     name: "Home Interior Design",
-    //     slug: "/design-gallery",
-    //   },
-    //   {
-    //     id: "2-2",
-    //     name: "Home Interior Design",
-    //     slug: "/design-gallery",
-    //   },
-    //   {
-    //     id: "2-3",
-    //     name: "Home Interior Design",
-    //     slug: "/design-gallery",
-    //   },
-    // ],
+    submenu: [
+      {
+        id: "2-1",
+        name: "Home Interior Design",
+        slug: "/design-gallery",
+      },
+      {
+        id: "2-2",
+        name: "Home Interior Design",
+        slug: "/design-gallery",
+      },
+      {
+        id: "2-3",
+        name: "Home Interior Design",
+        slug: "/design-gallery",
+      },
+    ],
   },
   {
     id: 9,
@@ -59,21 +59,21 @@ export const NAV_ITEMS: INav[] = [
     name: "Site Services",
     slug: "#",
   },
-  {
-    id: 6,
-    name: "FAQ",
-    slug: "#",
-  },
-  {
-    id: 7,
-    name: "Blog",
-    slug: "#",
-  },
-  {
-    id: 8,
-    name: "Contact",
-    slug: "#",
-  },
+  // {
+  //   id: 6,
+  //   name: "FAQ",
+  //   slug: "#",
+  // },
+  // {
+  //   id: 7,
+  //   name: "Blog",
+  //   slug: "#",
+  // },
+  // {
+  //   id: 8,
+  //   name: "Contact",
+  //   slug: "#",
+  // },
   // {
   //   id: 9,
   //   name: "More",
