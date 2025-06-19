@@ -20,7 +20,7 @@ export const NAV_ITEMS: INav[] = [
   {
     id: 2,
     name: "Design Gallery",
-    slug: "#",
+    slug: "/design-gallery",
     submenu: [
       {
         id: "modular-kitchen-designs",

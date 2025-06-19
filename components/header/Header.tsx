@@ -23,9 +23,9 @@ export default function Header() {
         <div className="wrapper flex items-center justify-between py-3.5">
           <Link href="/">
             <Image
-              className={`${pathname.includes("about-us") ? "w-[12rem]" : "w-[15rem]"}`}
+              className={`${pathname.includes("about-us") ? "w-[15rem]" : "w-[12rem]"}`}
               alt="Green Space Logo"
-              src={pathname.includes("about-us") ? "/logo3.png" : "/logo2.png"}
+              src={pathname.includes("about-us") ?  "/logo2.png" : "/logo3.png"}
               height={500}
               width={500}
             />

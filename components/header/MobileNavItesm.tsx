@@ -144,7 +144,7 @@ function MobileSidebar({ isOpen, onClose }: IMobileSidebarProps) {
             <Image
               className="w-[9rem]"
               // src={"/logo2.png"}
-              src={pathname.includes("about-us") ? "/logo3.png" : "/logo2.png"}
+              src={pathname.includes("about-us") ? "/logo2.png" : "/logo3.png"}
               height={500}
               width={500}
               alt="Green Space Logo"
