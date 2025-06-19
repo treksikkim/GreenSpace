@@ -18,7 +18,7 @@ export default function MobileSideBar({ children }: IProps) {
   }, [isOpen]);
 
   return (
-    <aside onClick={() => setIsOpen(false)} className="hidden fixed inset-0 min-h-screen flex items-start justify-end">
+    <aside onClick={() => setIsOpen(false)} className="fixed inset-0 min-h-screen flex items-start justify-end">
       <div className="h-screen w-[80%] backdrop-blur-2xl bg-teal-200/90">
         <div>
           <Image

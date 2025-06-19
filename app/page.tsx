@@ -113,39 +113,6 @@ export default function Home() {
           <OurServices />
         </section>
 
-        {/* Our Design Gallery */}
-        {/* <section className="font-jost wrapper space-y-8">
-        <div className="flex items-center justify-center flex-col gap-y-1">
-          <h2 className="text-2xl font-[500] bg-[#fef3c6] inline-block px-5 pt-1.5 pb-1">
-            Our Design Gallery
-          </h2>
-        </div>
-
-        <ul className="grid grid-cols-4 gap-6 font-jost">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-            <li key={item}>
-              <div className="shadow-xl border-[0.5px] rounded-tr-4xl border-gray-100 overflow-hidden">
-                <Image
-                  src={"/gallery.jpg"}
-                  alt="Gallery Item"
-                  height={1200}
-                  width={1200}
-                />
-                <div className="p-3 space-y-1.5">
-                  <h2 className="font-[450] text-gray-600">
-                    Modern Minimalistic 4 BHK Home Of Auro Smitha
-                  </h2>
-
-                  <Button className="min-w-40 py-1.5 text-primary bg-transparent border-primary border shadow-none">
-                    Explore More
-                  </Button>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </section> */}
-
         {/* Our Populer Designs */}
         <section data-aos="fade-up" className="font-jost">
           <div className="flex items-start max-h-[35rem] min-h-[35rem] overflow-hidden max-sm:flex-col max-sm:max-h-max">
@@ -168,15 +135,16 @@ export default function Home() {
                 className="mt-3.5 space-y-2.5 text-gray-200"
               >
                 <p className="font-libre text-[15px] tracking-wide">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Perferendis neque voluptatum alias mollitia excepturi? Debitis
-                  commodi, architecto non temporibus ea sunt earum facilis
-                  dolores blanditiis. Magni laudantium doloremque non
-                  consequuntur.
+                  Experience elegance and functionality with our best 2 BHK
+                  interior designs. From modern aesthetics to timeless comfort,
+                  each space is crafted to reflect your personality while
+                  ensuring smart space utilization. Our designs blend
+                  creativity, comfort, and contemporary style to transform
+                  everyday living.
                 </p>
                 <p className="font-libre text-[15px] tracking-wide">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Perferendis neque voluptatum alias.
+                  Discover how thoughtful lighting, custom furniture, and sleek
+                  finishes come together to create homes you’ll love to live in.
                 </p>
               </div>
 

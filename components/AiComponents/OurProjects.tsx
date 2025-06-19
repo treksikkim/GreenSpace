@@ -57,7 +57,7 @@ export default function OurProjects() {
   useEffect(() => {
     const handleResize = () => {
       if (typeof window !== "undefined") {
-        if (window.innerWidth <= 639) {
+        if (window.innerWidth <= 800) {
           setSliderPreviewView(1);
         } else if (window.innerWidth <= 1024) {
           setSliderPreviewView(2.5);

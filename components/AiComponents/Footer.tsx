@@ -204,7 +204,7 @@ export default function Footer() {
             "border-t border-teal-500 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center"
           )}
         >
-          <div className={cn("text-teal-100 text-sm")}>
+          <div className={cn("text-teal-100 text-sm max-sm:text-center")}>
             © 2025 Green Space Interior.
             <Link href="#" className={cn("hover:text-white ml-2")}>
               Privacy Policy

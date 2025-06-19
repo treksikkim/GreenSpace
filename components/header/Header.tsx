@@ -3,29 +3,33 @@
 import Image from "next/image";
 import React from "react";
 import NavItems from "./NavItems";
-import {  Headset } from "lucide-react";
+import { Headset, Menu } from "lucide-react";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 import Button from "../Button";
-import {
-  MobileMenuButton,
-  MobileSidebar,
-  useMobileNav,
-} from "./MobileNavItesm";
+import Link from "next/link";
+import { cn } from "@/utils/cn";
+import { useDispatch } from "react-redux";
+import { setMobileMenu } from "@/redux/slice/mobileMenuSlice";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const { isOpen, toggleSidebar, closeSidebar } = useMobileNav();
+  const dispatch = useDispatch();
+
+  const pathname = usePathname();
+
   return (
     <>
       <div>
         <div className="wrapper flex items-center justify-between py-3.5">
-          <Image
-            className="w-[10rem]"
-            alt="Green Space Logo"
-            src={"/Green-Space-Interior-logo-5.1.png"}
-            // src={"/Green-Space-Interior-logo-new1.png"}
-            height={500}
-            width={500}
-          />
+          <Link href="/">
+            <Image
+              className={`${pathname.includes("about-us") ? "w-[12rem]" : "w-[15rem]"}`}
+              alt="Green Space Logo"
+              src={pathname.includes("about-us") ? "/logo3.png" : "/logo2.png"}
+              height={500}
+              width={500}
+            />
+          </Link>
 
           <div className="max-sm:hidden">
             <NavItems />
@@ -42,14 +46,23 @@ export default function Header() {
             </Button>
           </OpenGetQuoteDialog>
 
-          {/* <AlignJustify className="max-sm:block hidden" /> */}
-
-          {/* Mobile Menu Button - Visible only on mobile */}
-          <MobileMenuButton onClick={toggleSidebar} isOpen={isOpen} />
+          <button
+            onClick={() => {
+              dispatch(setMobileMenu(true));
+            }}
+            className="lg:hidden p-2 rounded-lg hover:bg-amber-50 transition-colors duration-200 relative overflow-hidden group"
+            aria-label="Toggle mobile menu"
+          >
+            <div className="bg-amber-300/20 w-[60%] h-[100%] rotate-[45deg] absolute transition-all duration-[800ms] group-hover:left-[100%]"></div>
+            <Menu
+              size={24}
+              className={cn(
+                "text-gray-700 transition-transform duration-300 relative z-10"
+              )}
+            />
+          </button>
         </div>
       </div>
-      {/* Mobile Sidebar - Only renders on mobile */}
-      <MobileSidebar isOpen={isOpen} onClose={closeSidebar} />
     </>
   );
 }

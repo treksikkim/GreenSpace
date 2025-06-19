@@ -62,6 +62,7 @@ export default async function GalleryPage({ searchParams }: IProps) {
                     )}
                   >
                     <CustomLink
+                      queryParams={true}
                       className="px-6 py-3"
                       href={`?category=${category.id}`}
                     >
@@ -75,7 +76,11 @@ export default async function GalleryPage({ searchParams }: IProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredItems.map((item) => (
                   // <OpenGallery key={item.id} galleryItem={item} isOpen={true}>
-                  <Link key={item.id} href={"/design-gallery/1"} className="block">
+                  <Link
+                    key={item.id}
+                    href={"/design-gallery/1"}
+                    className="block"
+                  >
                     <div className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <Image
@@ -120,7 +125,7 @@ export default async function GalleryPage({ searchParams }: IProps) {
               {filteredItems.length === 0 && (
                 <div className="text-center py-16">
                   <p className="text-gray-500 text-lg">
-                    No items found in this category.
+                    No items found
                   </p>
                 </div>
               )}

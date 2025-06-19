@@ -7,6 +7,8 @@ import { ChevronDown, X, Menu } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 interface IMobileSidebarProps {
   isOpen: boolean;
@@ -71,7 +73,7 @@ function MobileNavList({ items, onItemClick, level = 0 }: IMobileNavListProps) {
               className={cn(
                 "overflow-hidden transition-all duration-300 ease-in-out",
                 expandedItems.has(item.id.toLocaleString())
-                  ? "max-h-96 opacity-100 mt-2"
+                  ? "max-h-[50rem] opacity-100 mt-2"
                   : "max-h-0 opacity-0"
               )}
             >
@@ -94,13 +96,13 @@ function MobileSidebar({ isOpen, onClose }: IMobileSidebarProps) {
   // Prevent body scroll when sidebar is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflowY = "auto";
     }
 
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflowY = "auto";
     };
   }, [isOpen]);
 
@@ -116,63 +118,65 @@ function MobileSidebar({ isOpen, onClose }: IMobileSidebarProps) {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, onClose]);
 
+  const pathname = usePathname();
+
   return (
     <>
       {/* Backdrop */}
       <div
         className={cn(
-          "fixed inset-0 bg-black/50 flex items-start justify-end backdrop-blur-sm z-40 transition-opacity duration-300 lg:hidden",
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          "fixed inset-0 min-h-screen bg-black/50 flex items-start justify-end backdrop-blur-sm z-[999] transition-opacity duration-300 lg:hidden",
+          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         )}
         onClick={onClose}
         aria-hidden="true"
-      />
-
-      {/* Sidebar */}
-      <div
-        className={cn(
-          "fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden",
-          isOpen ? "translate-x-0" : "translate-x-[110%]"
-        )}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-amber-100">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-amber-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">B</span>
-            </div>
-            <span className="font-jost font-semibold text-gray-800 text-lg">
-              Menu
-            </span>
+        {/* Sidebar */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className={cn(
+            "h-screen flex flex-col overflow-y-auto w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden",
+            isOpen ? "translate-x-0" : "translate-x-[110%]"
+          )}
+        >
+          {/* Header */}
+          <div className="flex items-center justify-between p-6 border-b border-amber-100">
+            <Image
+              className="w-[9rem]"
+              // src={"/logo2.png"}
+              src={pathname.includes("about-us") ? "/logo3.png" : "/logo2.png"}
+              height={500}
+              width={500}
+              alt="Green Space Logo"
+            />
+
+            <button
+              onClick={onClose}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              aria-label="Close menu"
+            >
+              <X size={20} className="text-gray-600" />
+            </button>
           </div>
 
-          <button
-            onClick={onClose}
-            className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
-            aria-label="Close menu"
-          >
-            <X size={20} className="text-gray-600" />
-          </button>
-        </div>
-
-        {/* Navigation */}
-        <div className="p-4 h-full overflow-y-auto pb-20">
-          <nav>
-            <MobileNavList items={NAV_ITEMS} onItemClick={onClose} />
-          </nav>
-        </div>
-
-        {/* Footer */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white to-transparent">
-          <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
-            <p className="text-sm text-gray-600 font-jost">
-              Ready to start your project?
-            </p>
-            <OpenGetQuoteDialog isOpen>
-              <button className="mt-2 w-full bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200">
-                Booking & Consultation
-              </button>
-            </OpenGetQuoteDialog>
+          {/* Navigation */}
+          <div className="p-4 flex-1 overflow-y-auto pb-20">
+            <nav>
+              <MobileNavList items={NAV_ITEMS} onItemClick={onClose} />
+            </nav>
+            {/* Footer */}
+            <div className="p-4 bg-gradient-to-t from-white to-transparent">
+              <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
+                <p className="text-sm text-gray-600 font-jost">
+                  Ready to start your project?
+                </p>
+                <OpenGetQuoteDialog isOpen>
+                  <button className="mt-2 w-full bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-200">
+                    Booking & Consultation
+                  </button>
+                </OpenGetQuoteDialog>
+              </div>
+            </div>
           </div>
         </div>
       </div>

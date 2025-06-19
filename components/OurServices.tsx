@@ -85,7 +85,7 @@ export default function OurServices() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setSliderPreviewView(window.innerWidth <= 639 ? 1 : 4);
+      setSliderPreviewView(window.innerWidth <= 800 ? 1 : 4);
     }
   }, []);
 

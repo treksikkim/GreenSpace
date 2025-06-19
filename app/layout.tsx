@@ -7,6 +7,7 @@ import Footer from "@/components/AiComponents/Footer";
 import ReduxProvider from "@/redux/ReduxProvider";
 import GetQuoteDialog from "@/components/Dialogs/AiDialogs/GetQuoteDialog";
 import AiHeaderHolder from "@/components/AiComponents/AiHeaderHolder";
+import Slider from "@/components/Slider";
 
 const jostFont = Jost({
   variable: "--font-jost",
@@ -32,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jostFont.variable} ${libreCaslonFont.variable} antialiased mx-auto max-w-[1920px] max-sm:max-w-full`}
+        className={`${jostFont.variable} ${libreCaslonFont.variable} antialiased mx-auto max-w-[1920px] max-sm:max-w-full max-sm:w-full overflow-x-hidden m-0 p-0`}
       >
         <svg className="absolute w-0 h-0">
           <filter id="frosted" primitiveUnits="objectBoundingBox">
@@ -76,6 +77,7 @@ export default function RootLayout({
         </svg>
 
         <ReduxProvider>
+          <Slider />
           <GetQuoteDialog />
           <OfferHeader />
           <AiHeaderHolder>

@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { setGetQuoteDialog } from "@/redux/slice/getQuoteDialogSlice";
 import AOSProvider from "@/components/Utils/AOSProvider";
+import DialogWrapper from "../DialogWrapper";
 
 const GetQuoteDialog = () => {
   const { isOpen } = useSelector(
@@ -139,9 +140,13 @@ const GetQuoteDialog = () => {
       `}</style>
       {isOpen && (
         <AOSProvider>
-          <div
-            onClick={handleCloseDialog}
-            className="fixed inset-0 bg-[#0000005e] bg-opacity-60 flex items-center justify-center z-[100] p-4"
+          <DialogWrapper
+            isOpen={isOpen}
+            setIsOpen={(isOpen) => {
+              if (!isOpen) {
+                dispatch(setGetQuoteDialog({ isOpen: false }));
+              }
+            }}
           >
             <div
               onClick={(e) => e.stopPropagation()}
@@ -349,7 +354,7 @@ const GetQuoteDialog = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </DialogWrapper>
         </AOSProvider>
       )}
     </>

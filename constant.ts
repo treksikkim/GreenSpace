@@ -20,22 +20,73 @@ export const NAV_ITEMS: INav[] = [
   {
     id: 2,
     name: "Design Gallery",
-    slug: "/design-gallery",
+    slug: "#",
     submenu: [
       {
-        id: "2-1",
-        name: "Home Interior Design",
-        slug: "/design-gallery",
+        id: "modular-kitchen-designs",
+        name: "Modular Kitchen Designs",
+        slug: "/design-gallery?type=modular-kitchen-designs",
       },
       {
-        id: "2-2",
-        name: "Home Interior Design",
-        slug: "/design-gallery",
+        id: "living-room-designs",
+        name: "Living Room Designs",
+        slug: "/design-gallery?type=living-room-designs",
       },
       {
-        id: "2-3",
-        name: "Home Interior Design",
-        slug: "/design-gallery",
+        id: "bedroom-designs",
+        name: "Bedroom Designs",
+        slug: "/design-gallery?type=bedroom-designs",
+      },
+      {
+        id: "kids-badroom-designs",
+        name: "Kids Bedroom Designs",
+        slug: "/design-gallery?type=kids-badroom-designs",
+      },
+      {
+        id: "wardrobe-designs",
+        name: "Wardrobe Designs",
+        slug: "/design-gallery?type=wardrobe-designs",
+      },
+      {
+        id: "dining-room-designs",
+        name: "Dining Room Designs",
+        slug: "/design-gallery?type=dining-room-designs",
+      },
+      {
+        id: "pooja-room-designs",
+        name: "Pooja Room Designs",
+        slug: "/design-gallery?type=pooja-room-designs",
+      },
+      {
+        id: "space-saving-designs",
+        name: "Space Saving Designs",
+        slug: "/design-gallery?type=space-saving-designs",
+      },
+      {
+        id: "bathroom-designs",
+        name: "Bathroom Designs",
+        slug: "/design-gallery?type=bathroom-designs",
+      },
+
+      {
+        id: "balcony-designs",
+        name: "Balcony Designs",
+        slug: "/design-gallery?type=balcony-designs",
+      },
+      {
+        id: "1bhk-designs",
+        name: "1 BHK Designs",
+        slug: "/design-gallery?type=1bhk-designs",
+      },
+      {
+        id: "2bhk-designs",
+        name: "2 BHK Designs",
+        slug: "/design-gallery?type=2bhk-designs",
+      },
+      {
+        id: "3bhk-designs",
+        name: "3 BHK Designs",
+        slug: "/design-gallery?type=3bhk-designs",
       },
     ],
   },
@@ -84,16 +135,16 @@ export const NAV_ITEMS: INav[] = [
 export const BANNER_ITEMS = [
   {
     id: "1",
-    heading: "From Concept to Creation",
+    heading: "Modern Elegance for Every Corner",
     subheading:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem veniam praesentium atque.",
+      "Transform your 2 BHK with sleek, stylish interiors that reflect your unique taste and lifestyle.",
     bannerImage: "/banners/4.png",
   },
   {
     id: "2",
-    heading: "From Concept to Creation 2",
+    heading: "Smart Spaces, Stunning Designs",
     subheading:
-      "2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem veniam praesentium atque.",
+      "Maximize every inch of your home with creative layouts and multifunctional furniture tailored for compact living.",
     bannerImage: "/banners/3.png",
   },
 ];
@@ -176,37 +227,49 @@ export const galleryItems: GalleryItem[] = [
 ];
 
 export const categories: Category[] = [
-  { id: "all", name: "All Projects", count: galleryItems.length },
-  {
-    id: "living-room",
-    name: "Living Room",
-    count: galleryItems.filter((item) => item.category === "living-room")
-      .length,
-  },
-  {
-    id: "bedroom",
-    name: "Bedroom",
-    count: galleryItems.filter((item) => item.category === "bedroom").length,
-  },
-  {
-    id: "kitchen",
-    name: "Kitchen",
-    count: galleryItems.filter((item) => item.category === "kitchen").length,
-  },
-  {
-    id: "bathroom",
-    name: "Bathroom",
-    count: galleryItems.filter((item) => item.category === "bathroom").length,
-  },
-  {
-    id: "dining-room",
-    name: "Dining Room",
-    count: galleryItems.filter((item) => item.category === "dining-room")
-      .length,
-  },
-  {
-    id: "office",
-    name: "Office",
-    count: galleryItems.filter((item) => item.category === "office").length,
-  },
+  { id: "all", name: "All Items", count: galleryItems.length },
 ];
+
+NAV_ITEMS[1].submenu?.forEach((item) => {
+  categories.push({
+    id: item.id.toString(),
+    count: galleryItems.filter((gItem) => gItem.id == item.id).length,
+    name: item.name,
+  });
+});
+
+// export const categories: Category[] = [
+//   { id: "all", name: "All Items", count: galleryItems.length },
+//   {
+//     id: "living-room",
+//     name: "Living Room",
+//     count: galleryItems.filter((item) => item.category === "living-room")
+//       .length,
+//   },
+//   {
+//     id: "bedroom",
+//     name: "Bedroom",
+//     count: galleryItems.filter((item) => item.category === "bedroom").length,
+//   },
+//   {
+//     id: "kitchen",
+//     name: "Kitchen",
+//     count: galleryItems.filter((item) => item.category === "kitchen").length,
+//   },
+//   {
+//     id: "bathroom",
+//     name: "Bathroom",
+//     count: galleryItems.filter((item) => item.category === "bathroom").length,
+//   },
+//   {
+//     id: "dining-room",
+//     name: "Dining Room",
+//     count: galleryItems.filter((item) => item.category === "dining-room")
+//       .length,
+//   },
+//   {
+//     id: "office",
+//     name: "Office",
+//     count: galleryItems.filter((item) => item.category === "office").length,
+//   },
+// ];

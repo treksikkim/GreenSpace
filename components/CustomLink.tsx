@@ -10,6 +10,7 @@ interface IProps extends LinkProps {
   children: React.ReactNode;
   className?: string;
   spinnerSize?: number;
+  queryParams?: boolean;
 }
 
 export default function CustomLink({
@@ -17,6 +18,7 @@ export default function CustomLink({
   children,
   spinnerSize,
   className,
+  queryParams = false,
   ...rest
 }: IProps) {
   const route = useRouter();
@@ -24,7 +26,11 @@ export default function CustomLink({
 
   const handleLinkClick = () => {
     startTransition(() => {
-      route.push(href.toString());
+      if (!queryParams) {
+        route.push(href.toString());
+      } else {
+        history.pushState(null, "", href.toString());
+      }
     });
   };
 
@@ -32,11 +38,11 @@ export default function CustomLink({
     <Link
       href={href}
       {...rest}
-      className={cn(className, "flex items-center gap-2")}
+      className={cn(className, "flex relative items-center gap-2")}
       onClick={handleLinkClick}
     >
       {isPending ? (
-        <Loader2 className="animate-spin" size={spinnerSize ?? 15} />
+        <Loader2 className="animate-spin absolute" size={spinnerSize ?? 15} />
       ) : null}
       {children}
     </Link>

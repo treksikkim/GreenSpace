@@ -48,7 +48,7 @@ export default function AiHeaderHolder({ children, ...props }: IProps) {
     <header
       {...props}
       className={cn(
-        "shadow-lg sticky top-0 z-50 backdrop-blur-2xl bg-[#ffffff8e] transition-all duration-500",
+        "shadow-lg sticky overflow-x-hidden top-0 z-50 backdrop-blur-2xl bg-[#ffffff8e] transition-all duration-500",
         // "sticky top-0 z-50 transition-all duration-500",
         isVisible ? "translate-y-0" : "-translate-y-full",
         isScrolled ? "shadow-xl backdrop-blur-sm bg-white/95" : "bg-white"
