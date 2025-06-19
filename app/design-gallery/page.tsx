@@ -50,12 +50,12 @@ export default async function GalleryPage({ searchParams }: IProps) {
 
             {/* Category Filter */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <div className="flex flex-wrap justify-center gap-3 mb-8 max-sm:flex-nowrap max-sm:w-full max-sm:overflow-x-auto max-sm:justify-start max-sm:pb-6">
                 {categories.map((category) => (
                   <button
                     key={category.id}
                     className={cn(
-                      "rounded-full text-sm font-medium transition-all duration-300",
+                      "rounded-full text-sm font-medium transition-all duration-300 max-sm:shrink-0",
                       activeCategory === category.id
                         ? "bg-teal-600 text-white shadow-lg"
                         : "bg-white text-gray-700 hover:bg-teal-50 hover:text-teal-600 shadow-sm border border-gray-200"
