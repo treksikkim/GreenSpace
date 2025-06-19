@@ -6,9 +6,19 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Star, Play, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import {
+  Star,
+  Play,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  Users,
+  CalendarFold,
+  Smile,
+} from "lucide-react";
 import Image from "next/image";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
+import Counter from "../Counter";
 
 export default function ImprovedReviewsSection2() {
   SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -120,11 +130,17 @@ export default function ImprovedReviewsSection2() {
             {/* <span className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2 block">
               Testimonials
             </span> */}
-            <div data-aos="fade-down" className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
+            <div
+              data-aos="fade-down"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6"
+            >
               <Star className="w-5 h-5 text-[#00776e]" />
               <span className="text-[#00776e] font-medium">Testimonials</span>
             </div>
-            <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-bold mb-4 relative">
+            <h2
+              data-aos="fade-up"
+              className="text-4xl md:text-5xl font-bold mb-4 relative"
+            >
               <span style={{ color: "#00776e" }}>What Our Happy</span>
               <br />
               <span className="relative">
@@ -135,7 +151,10 @@ export default function ImprovedReviewsSection2() {
                 ></div>
               </span>
             </h2>
-            <p data-aos="fade-up" className="text-lg text-gray-600 max-w-2xl mx-auto mt-6">
+            <p
+              data-aos="fade-up"
+              className="text-lg text-gray-600 max-w-2xl mx-auto mt-6"
+            >
               Don&apos;t just take our word for it. Here&apos;s what our
               satisfied customers have to say about their experience with us.
             </p>
@@ -295,13 +314,13 @@ export default function ImprovedReviewsSection2() {
               className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
               style={{ backgroundColor: "#00776e" }}
             >
-              <Star className="w-8 h-8 text-white" fill="white" />
+              <Star color="#ffffff" />
             </div>
             <div
               className="text-3xl font-bold mb-1"
               style={{ color: "#00776e" }}
             >
-              4.9
+              <Counter to={4.9} intervel={300} />
             </div>
             <div className="text-sm text-gray-600">Average Rating</div>
           </div>
@@ -311,13 +330,15 @@ export default function ImprovedReviewsSection2() {
               className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
               style={{ backgroundColor: "#ab6447" }}
             >
-              <div className="text-xl font-bold text-white">500+</div>
+              <div className="text-xl font-bold text-white">
+                <Users />
+              </div>
             </div>
             <div
               className="text-3xl font-bold mb-1"
               style={{ color: "#00776e" }}
             >
-              500+
+              <Counter to={500} />+
             </div>
             <div className="text-sm text-gray-600">Happy Customers</div>
           </div>
@@ -327,13 +348,15 @@ export default function ImprovedReviewsSection2() {
               className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
               style={{ backgroundColor: "#00776e" }}
             >
-              <div className="text-2xl font-bold text-white">15+</div>
+              <div className="text-2xl font-bold text-white">
+                <CalendarFold />
+              </div>
             </div>
             <div
               className="text-3xl font-bold mb-1"
               style={{ color: "#00776e" }}
             >
-              15+
+              <Counter to={15} intervel={120} />+
             </div>
             <div className="text-sm text-gray-600">Years Experience</div>
           </div>
@@ -343,13 +366,15 @@ export default function ImprovedReviewsSection2() {
               className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform"
               style={{ backgroundColor: "#ab6447" }}
             >
-              <div className="text-2xl font-bold text-white">98%</div>
+              <div className="text-2xl font-bold text-white">
+                <Smile />
+              </div>
             </div>
             <div
               className="text-3xl font-bold mb-1"
               style={{ color: "#00776e" }}
             >
-              98%
+              <Counter to={98} intervel={20} />%
             </div>
             <div className="text-sm text-gray-600">Satisfaction Rate</div>
           </div>

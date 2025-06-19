@@ -1,9 +1,9 @@
 import Banner from "@/components/banner/Banner";
 import ContactUsSection from "@/components/AiComponents/ContactUsSection";
 import ImprovedReviewsSection2 from "@/components/AiComponents/ImprovedReviewsSection2";
-import NewDesignGallery from "@/components/AiComponents/NewDesignGallery";
+import OurProjects from "@/components/AiComponents/OurProjects";
 import OurServices from "@/components/OurServices";
-import {  HandPlatter, Headset } from "lucide-react";
+import { HandPlatter, Headset } from "lucide-react";
 import AboutUsSection from "@/components/AiComponents/AboutUsSection";
 import Button from "@/components/Button";
 import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
@@ -18,68 +18,68 @@ export default function Home() {
 
         {/* About Us */}
         {/* <section className="font-jost wrapper space-y-8">
-        <div className="flex items-start gap-16 mx-auto max-w-[90%]">
-          <div>
-            <Image
-              className="w-[56rem] rounded-bl-3xl rounded-tr-3xl"
-              alt="About Us Section"
-              src={"/about/about-section.png"}
-              height={1200}
-              width={1200}
-            />
-          </div>
-          <div className="space-y-6">
-            <h2 className="bg-secondary px-3.5 py-1.5 text-white inline-block">
-              About Us
-            </h2>
-
+          <div className="flex items-start gap-16 mx-auto max-w-[90%]">
             <div>
-              <h3 className="text-primary text-2xl font-semibold">
-                We Aim to Set the Trends
-              </h3>
-              <div className="space-y-3.5 font-[350] mt-1">
-                <p>
-                  Passionately creating personalised designer homes since
-                  2015.It was founded by award-winning architects, Shezaan
-                  Bhojani & Gita Ramanan, who bring together more than two
-                  decades of national and international design experience.
-                </p>
-                <p>
-                  Passionately creating personalised designer homes since
-                  2015.It was founded by award-winning architects, Shezaan
-                  Bhojani & Gita Ramanan,
-                </p>
-              </div>
+              <Image
+                className="w-[56rem] rounded-bl-3xl rounded-tr-3xl"
+                alt="About Us Section"
+                src={"/about/about-section.png"}
+                height={1200}
+                width={1200}
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="bg-secondary px-3.5 py-1.5 text-white inline-block">
+                About Us
+              </h2>
 
-              <div className="flex items-center gap-14 my-7">
-                <span>
-                  <span className="text-2xl text-secondary block font-libre">
-                    346 +
-                  </span>
-                  <span className="font-[300]">Succeeded Projects</span>
-                </span>
-                <span>
-                  <span className="text-2xl text-secondary block font-libre">
-                    9 +
-                  </span>
-                  <span className="font-[300]">Working Hours</span>
-                </span>
-                <span>
-                  <span className="text-2xl text-secondary block font-libre">
-                    15 +
-                  </span>
-                  <span className="font-[300]">Years Of Exprience</span>
-                </span>
-              </div>
+              <div>
+                <h3 className="text-primary text-2xl font-semibold">
+                  We Aim to Set the Trends
+                </h3>
+                <div className="space-y-3.5 font-[350] mt-1">
+                  <p>
+                    Passionately creating personalised designer homes since
+                    2015.It was founded by award-winning architects, Shezaan
+                    Bhojani & Gita Ramanan, who bring together more than two
+                    decades of national and international design experience.
+                  </p>
+                  <p>
+                    Passionately creating personalised designer homes since
+                    2015.It was founded by award-winning architects, Shezaan
+                    Bhojani & Gita Ramanan,
+                  </p>
+                </div>
 
-              <Button className="flex items-center gap-2">
-                More About Us
-                <ArrowDownRight strokeWidth={1} className="-rotate-90" />
-              </Button>
+                <div className="flex items-center gap-14 my-7">
+                  <span>
+                    <span className="text-2xl text-secondary block font-libre">
+                      346 +
+                    </span>
+                    <span className="font-[300]">Succeeded Projects</span>
+                  </span>
+                  <span>
+                    <span className="text-2xl text-secondary block font-libre">
+                      9 +
+                    </span>
+                    <span className="font-[300]">Working Hours</span>
+                  </span>
+                  <span>
+                    <span className="text-2xl text-secondary block font-libre">
+                      15 +
+                    </span>
+                    <span className="font-[300]">Years Of Exprience</span>
+                  </span>
+                </div>
+
+                <Button className="flex items-center gap-2">
+                  More About Us
+                  <ArrowDownRight strokeWidth={1} className="-rotate-90" />
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </section> */}
+        </section> */}
         <AboutUsSection />
 
         {/* Our Services */}
@@ -205,6 +205,8 @@ export default function Home() {
           </div>
         </section>
 
+        <OurProjects />
+
         {/* <OurBestWorks /> */}
 
         {/* Reviews */}
@@ -217,7 +219,6 @@ export default function Home() {
 
         <Reviews />
       </section> */}
-        <NewDesignGallery />
 
         <ImprovedReviewsSection2 />
 

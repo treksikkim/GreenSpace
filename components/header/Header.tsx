@@ -16,7 +16,7 @@ export default function Header() {
   const { isOpen, toggleSidebar, closeSidebar } = useMobileNav();
   return (
     <>
-      <div className="sticky top-0 z-50 backdrop-blur-2xl bg-[#ffffff8e] shadow-xl">
+      <div>
         <div className="wrapper flex items-center justify-between py-3.5">
           <Image
             className="w-[10rem]"

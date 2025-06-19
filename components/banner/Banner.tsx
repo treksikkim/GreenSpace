@@ -33,7 +33,8 @@ export default function Banner() {
 
   return (
     <section className="max-sm:mb-24 max-sm:mt-72">
-      <div className="wrapper relative font-jost w-full overflow-hidden max-sm:overflow-visible aspect-[3/1] max-sm:aspect-[3/3] rounded-tr-3xl rounded-bl-3xl shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+      {/* shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] */}
+      <div className="wrapper relative font-jost w-full overflow-hidden max-sm:overflow-visible aspect-[3/1] max-sm:aspect-[3/3] rounded-tr-3xl rounded-bl-3xl">
         {BANNER_ITEMS.map((item, index) => (
           <Image
             key={item.id}
@@ -122,7 +123,7 @@ export default function Banner() {
           </div>
         </div>
 
-        <div className="absolute z-20 right-0 bottom-0 max-sm:-bottom-10 flex items-center gap-8 bg-white backdrop-blur-2xl py-3.5 px-3.5 rounded-t-2xl">
+        <div className="absolute z-20 right-0 bottom-0 max-sm:-bottom-10 flex items-center gap-8 bg-white backdrop-blur-2xl py-3.5 px-3.5">
           <div className="flex flex-col gap-1 justify-center items-center">
             <House strokeWidth={1} size={18} />
             <h3 className="font-medium text-xs text-center">

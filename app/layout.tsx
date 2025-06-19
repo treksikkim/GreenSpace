@@ -6,6 +6,7 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/AiComponents/Footer";
 import ReduxProvider from "@/redux/ReduxProvider";
 import GetQuoteDialog from "@/components/Dialogs/AiDialogs/GetQuoteDialog";
+import AiHeaderHolder from "@/components/AiComponents/AiHeaderHolder";
 
 const jostFont = Jost({
   variable: "--font-jost",
@@ -77,7 +78,9 @@ export default function RootLayout({
         <ReduxProvider>
           <GetQuoteDialog />
           <OfferHeader />
-          <Header />
+          <AiHeaderHolder>
+            <Header />
+          </AiHeaderHolder>
           <main className="mt-3.5 w-full overflow-x-hidden">{children}</main>
           <Footer />
         </ReduxProvider>
