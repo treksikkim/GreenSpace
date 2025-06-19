@@ -14,6 +14,7 @@ import {
   GalleryHorizontal,
 } from "lucide-react";
 import CustomLink from "../CustomLink";
+import Button from "../Button";
 
 const galleryItems = [
   {
@@ -109,16 +110,28 @@ export default function NewDesignGallery() {
             {/* <span className="text-[#00776d] text-sm font-medium tracking-wider uppercase mb-2 block">
               Portfolio
             </span> */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
+            <div
+              data-aos="fade-down"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6"
+            >
               <GalleryHorizontal className="w-5 h-5 text-[#00776e]" />
               <span className="text-[#00776e] font-medium">Services</span>
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2
+              data-aos="fade-up"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+            >
               Our Design Gallery
             </h2>
-            <div className="w-20 h-1 bg-[#00776d] mx-auto mb-6"></div>
+            <div
+              data-aos="fade-up"
+              className="w-20 h-1 bg-[#00776d] mx-auto mb-6"
+            ></div>
           </div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p
+            data-aos="fade-up"
+            className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed"
+          >
             Explore our collection of stunning interior designs that transform
             spaces into extraordinary experiences. Each project reflects our
             commitment to excellence and innovation.
@@ -126,7 +139,7 @@ export default function NewDesignGallery() {
         </div>
 
         {/* Gallery Slider */}
-        <div className="relative">
+        <div data-aos="fade-up" className="relative">
           <Swiper
             slidesPerView={sliderPreviewView}
             centeredSlides={false}
@@ -235,13 +248,19 @@ export default function NewDesignGallery() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-5">
-          <button className="inline-flex items-center gap-2 bg-[#00776d] text-white rounded-full font-medium hover:bg-[#005a52] transition-colors duration-300 hover:gap-3">
+        <div data-aos="fade-up" className="text-center mt-5">
+          {/* <button className="inline-flex items-center gap-2 bg-[#00776d] text-white rounded-full font-medium hover:bg-[#005a52] transition-colors duration-300 hover:gap-3">
             <CustomLink href="/design-gallery" className="px-8 py-3 ">
               View All Projects
               <ArrowRight size={18} />
             </CustomLink>
-          </button>
+          </button> */}
+          <Button>
+            <CustomLink href="/design-gallery">
+              View All Projects
+              <ArrowRight size={18} />
+            </CustomLink>
+          </Button>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export const ImageCarousel: React.FC<{ images: string[]; title: string }> = ({
@@ -19,10 +20,12 @@ export const ImageCarousel: React.FC<{ images: string[]; title: string }> = ({
 
   return (
     <div className="relative h-72 overflow-hidden rounded-t-2xl group">
-      <img
+      <Image
         src={images[currentImage]}
         alt={`${title} - Image ${currentImage + 1}`}
         className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+        fill
+        objectFit="cover"
       />
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

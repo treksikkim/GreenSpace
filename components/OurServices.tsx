@@ -11,7 +11,7 @@ import { ArrowUpRight, CircleArrowRight } from "lucide-react";
 
 export default function OurServices() {
   SwiperCore.use([Navigation]);
-  
+
   const swiperRef = useRef<SwiperClass | null>(null);
   const [sliderPreviewView, setSliderPreviewView] = useState(4);
 
@@ -40,12 +40,16 @@ export default function OurServices() {
           swiperRef.current = swiper;
         }}
       >
-        {[1, 2, 3, 4, 5, 6, 7].map((item) => (
+        {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
           <SwiperSlide
             key={item}
             className="flex-center flex-col relative min-h-[19rem] w-48 overflow-hidden max-sm:w-full z-10"
           >
-            <div className="block  min-h-[19rem]">
+            <div
+              data-aos="fade-up"
+              data-aos-delay={index * 200}
+              className="block  min-h-[19rem]"
+            >
               <div className="overflow-hidden relative w-full  min-h-[19rem]">
                 <Image
                   className="w-full min-h-[19rem] object-cover"

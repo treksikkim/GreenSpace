@@ -120,11 +120,11 @@ export default function ImprovedReviewsSection2() {
             {/* <span className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-2 block">
               Testimonials
             </span> */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
+            <div data-aos="fade-down" className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
               <Star className="w-5 h-5 text-[#00776e]" />
               <span className="text-[#00776e] font-medium">Testimonials</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 relative">
+            <h2 data-aos="fade-up" className="text-4xl md:text-5xl font-bold mb-4 relative">
               <span style={{ color: "#00776e" }}>What Our Happy</span>
               <br />
               <span className="relative">
@@ -135,7 +135,7 @@ export default function ImprovedReviewsSection2() {
                 ></div>
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-6">
+            <p data-aos="fade-up" className="text-lg text-gray-600 max-w-2xl mx-auto mt-6">
               Don&apos;t just take our word for it. Here&apos;s what our
               satisfied customers have to say about their experience with us.
             </p>
@@ -143,7 +143,7 @@ export default function ImprovedReviewsSection2() {
         </div>
 
         {/* Reviews Carousel */}
-        <div className="relative max-w-[90%] mx-auto">
+        <div data-aos="fade-up" className="relative max-w-[90%] mx-auto">
           {/* Navigation Buttons */}
           <button
             onClick={goBack}

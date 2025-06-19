@@ -1,11 +1,8 @@
-"use client";
-
 import { NAV_ITEMS } from "@/constant";
 import { INav } from "@/types";
 import { cn } from "@/utils/cn";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
 interface INavListView {
   items: INav[];
@@ -14,28 +11,15 @@ interface INavListView {
 }
 
 function NavListView({ items, wrapperClassName, itemClassName }: INavListView) {
-  const [submenuOpenIndex, setSubmenuIndex] = useState(-1);
-
   return (
     <ul
       className={cn(
-        "flex items-center gap-7 font-jost relative",
+        "flex items-center gap-7 font-jost relative max-sm:flex-col",
         wrapperClassName
       )}
     >
-      {items.map((eachItem, index) => (
-        <li
-          onMouseEnter={() => {
-            if (eachItem.submenu) {
-              setSubmenuIndex(index);
-            }
-          }}
-          onMouseLeave={() => {
-            setSubmenuIndex(-1);
-          }}
-          key={eachItem.id}
-          className="group/navitem"
-        >
+      {items.map((eachItem) => (
+        <li key={eachItem.id} className="group/navitem">
           <Link
             href={eachItem.slug}
             className={cn(
@@ -50,8 +34,8 @@ function NavListView({ items, wrapperClassName, itemClassName }: INavListView) {
             ) : null}
           </Link>
 
-          {eachItem.submenu && submenuOpenIndex ? (
-            <div className="absolute top-16 -z-50 transition-all duration-500 opacity-0 translate-y-10 group-hover/navitem:opacity-100 group-hover/navitem:translate-y-0 group-hover/navitem:z-0">
+          {eachItem.submenu ? (
+            <div className="absolute top-16 invisible transition-all duration-300 translate-y-10 opacity-0 group-hover/navitem:visible group-hover/navitem:translate-y-0 group-hover/navitem:opacity-100 z-50">
               <div className="relative">
                 <div className="bg-amber-200 inset-0 absolute -z-10 blur-[4px] rounded-2xl"></div>
                 <div className="bg-amber-50 backdrop-blur-3xl border border-amber-50 rounded-2xl overflow-hidden">

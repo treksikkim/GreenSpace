@@ -7,7 +7,8 @@ import {
   TrendingUp,
   BadgeInfo,
 } from "lucide-react";
-import CustomLink from "../CustomLink";
+import Button from "../Button";
+import Counter from "../Counter";
 
 export default function AboutUsSection() {
   return (
@@ -42,7 +43,7 @@ export default function AboutUsSection() {
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Image Section */}
-          <div className="relative bg-amber-200">
+          <div data-aos="fade-up" className="relative bg-amber-200">
             <div className="relative overflow-hidden rounded-tl-3xl rounded-br-3xl shadow-2xl">
               <Image
                 className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
@@ -71,12 +72,19 @@ export default function AboutUsSection() {
 
           {/* Content Section */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6">
+            <div
+              data-aos="fade-up"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00776e]/10 to-[#ab6447]/10 rounded-full mb-6"
+            >
               <BadgeInfo className="w-5 h-5 text-[#00776e]" />
               <span className="text-[#00776e] font-medium">About Us</span>
             </div>
             <div className="space-y-6">
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p
+                data-aos="fade-up"
+                data-aos-delay="250"
+                className="text-lg text-gray-700 leading-relaxed"
+              >
                 Passionately creating personalised designer homes since 2015. It
                 was founded by award-winning architects,{" "}
                 <span className="font-semibold text-teal-700">
@@ -94,35 +102,50 @@ export default function AboutUsSection() {
 
             {/* Statistics Grid */}
             <div className="grid grid-cols-3 gap-6  max-sm:grid-cols-1">
-              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="300"
+                className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
                 <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <TrendingUp className="w-5 h-5 text-teal-600" />
                 </div>
                 <div className="text-2xl font-bold text-teal-600 mb-1">
-                  346+
+                  <Counter to={346} />+
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
                   Succeeded Projects
                 </div>
               </div>
 
-              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="600"
+                className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
                 <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Clock className="w-5 h-5 text-orange-600" />
                 </div>
                 <div className="text-2xl font-bold text-orange-600 mb-1">
-                  24/7
+                  <Counter to={24} intervel={100} />/
+                  <Counter to={7} intervel={300} />
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
                   Support Service
                 </div>
               </div>
 
-              <div className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="900"
+                className="text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Users className="w-5 h-5 text-blue-600" />
                 </div>
-                <div className="text-2xl font-bold text-blue-600 mb-1">15+</div>
+                <div className="text-2xl font-bold text-blue-600 mb-1">
+                  <Counter to={24} intervel={110} />+
+                </div>
                 <div className="text-sm text-gray-600 font-medium">
                   Years Experience
                 </div>
@@ -137,7 +160,12 @@ export default function AboutUsSection() {
                 "International design experience",
                 "Sustainable and innovative approaches",
               ].map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
+                <div
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 200}
+                  className="flex items-center gap-3"
+                >
                   <div className="w-2 h-2 bg-teal-600 rounded-full"></div>
                   <span className="text-gray-700">{feature}</span>
                 </div>
@@ -145,13 +173,17 @@ export default function AboutUsSection() {
             </div>
 
             {/* CTA Button */}
-            <div className="pt-4">
-              <button className="group inline-flex items-center gap-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <div className="pt-4" data-aos="fade-left">
+              {/* <button data-aos="fade-left" className="group inline-flex items-center gap-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 <CustomLink href={"/about-us"} className="px-8 py-4">
                   More About Us
                   <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 </CustomLink>
-              </button>
+              </button> */}
+              <Button>
+                More About Us
+                <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              </Button>
             </div>
           </div>
         </div>

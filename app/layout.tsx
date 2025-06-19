@@ -78,7 +78,7 @@ export default function RootLayout({
           <GetQuoteDialog />
           <OfferHeader />
           <Header />
-          {children}
+          <main className="mt-3.5 w-full overflow-x-hidden">{children}</main>
           <Footer />
         </ReduxProvider>
       </body>

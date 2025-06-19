@@ -9,12 +9,11 @@ export default function Button({
   return (
     <div className="relative inline-block">
       <button
+        {...rest}
         className={cn(
-          (className =
-            "group cursor-pointer relative overflow-hidden px-8 py-4 inline-flex items-center gap-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"),
+          "group cursor-pointer relative overflow-hidden px-8 py-4 inline-flex items-center gap-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1",
           className
         )}
-        {...rest}
       >
         {children}
 
