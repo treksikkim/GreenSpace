@@ -18,13 +18,17 @@ export default function MobileSideBar({ children }: IProps) {
   }, [isOpen]);
 
   return (
-    <aside onClick={() => setIsOpen(false)} className="fixed inset-0 min-h-screen flex items-start justify-end">
+    <aside
+      onClick={() => setIsOpen(false)}
+      className="fixed inset-0 min-h-screen flex items-start justify-end"
+    >
       <div className="h-screen w-[80%] backdrop-blur-2xl bg-teal-200/90">
         <div>
           <Image
             className="w-[10rem]"
             alt="Green Space Logo"
-            src={"/Green-Space-Interior-logo-5.1.png"}
+            // src={"/Green-Space-Interior-logo-5.1.png"}
+            src={"/logo.png"}
             height={200}
             width={200}
           />

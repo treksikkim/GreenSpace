@@ -8,21 +8,22 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import {
   Star,
-  Play,
   ChevronLeft,
   ChevronRight,
-  Quote,
   Users,
   CalendarFold,
   Smile,
+  ChevronDown,
 } from "lucide-react";
-import Image from "next/image";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 import Counter from "../Counter";
 import VideoViewDialog from "../Dialogs/VideoViewDialog";
+import { cn } from "@/utils/cn";
 
 export default function ImprovedReviewsSection2() {
   const [isVideoDialogOpen, setIsVideoDialogOpen] = useState(false);
+
+  const [readMoreId, setReadMoreId] = useState<string | number>(-1);
 
   SwiperCore.use([Navigation, Pagination, Autoplay]);
   const swiperRef = useRef<SwiperClass | null>(null);
@@ -46,76 +47,47 @@ export default function ImprovedReviewsSection2() {
     }
   }, []);
 
-  const reviews = [
+  const reviews: {
+    id: number | string;
+    name: string;
+    location: string;
+    review: string;
+    rating: number;
+    image: string;
+    videoLink?: string;
+  }[] = [
     {
       id: 1,
-      name: "Sumit Mukherjee",
+      name: "Mr Amit Das",
       location: "Kolkata",
       review:
-        "Their service is one of the best service in kolkata and provide customized designs which has transformed our home completely. The attention to detail is remarkable.",
+        "Green Space had a collection of creative designs and our search for a home interior firm ended here. We were happy with flawless execution and timely customer interaction. I am very happy to hire them. They are the best Interior Designer in Kolkata. Highly recommended.",
       rating: 5,
       image: "/happy-customer.png",
-      videoLink: "https://www.youtube.com",
     },
     {
       id: 2,
-      name: "Priya Sharma",
-      location: "Mumbai",
-      review:
-        "Exceptional work quality and professional approach. They understood our vision perfectly and delivered beyond our expectations. Highly recommended!",
+      name: "Mr. Veerinder Kumar",
+      review: `If you are finding a perfect interior designer in Kolkata, then I will suggest you choose Green Space. I hired them to design my 2BHK flat in Kolkata from Google. They respond very quickly and send me a perfect quotation for my flat interior design. They are the cheapest interior designer in Kolkata.`,
       rating: 5,
       image: "/happy-customer.png",
-      videoLink: null,
+      location: "Kolkata",
     },
     {
       id: 3,
-      name: "Rajesh Kumar",
-      location: "Delhi",
-      review:
-        "Amazing modular kitchen design! The team was very cooperative and completed the project on time. The quality of materials used is top-notch.",
+      name: "Mr. Arpan Biswas",
+      review: `We hired Green Space for our home interiors. The project manager was very responsive. They took our requests to a desirable conclusion. It has been a value for money outcome, with good finishes as promised. So, if you are looking for an interior designer in Kolkata, then contact them.`,
       rating: 5,
       image: "/happy-customer.png",
-      videoLink: null,
+      location: "Kolkata",
     },
     {
       id: 4,
-      name: "Anjali Patel",
-      location: "Bangalore",
-      review:
-        "Beautiful interior design work. They have great creativity and the final result exceeded our expectations. Very satisfied with their service.",
+      name: "Mrs. Samriddhi Pul",
+      review: `I am looking for an interior designer to design my flat, then I found Green Space on Google. I called them and they respond very quickly. Also, they send me a quotation very quickly, which matches with my budget. I am very happy to hire them. I am fully satisfied with their service.`,
       rating: 5,
       image: "/happy-customer.png",
-      videoLink: null,
-    },
-    {
-      id: 5,
-      name: "Vikram Singh",
-      location: "Pune",
-      review:
-        "Professional team with excellent craftsmanship. They completed our home renovation project flawlessly. Great value for money.",
-      rating: 5,
-      image: "/happy-customer.png",
-      videoLink: null,
-    },
-    {
-      id: 6,
-      name: "Meera Reddy",
-      location: "Hyderabad",
-      review:
-        "Outstanding service from start to finish. The team was professional, punctual, and delivered exactly what we envisioned for our dream home.",
-      rating: 5,
-      image: "/happy-customer.png",
-      videoLink: null,
-    },
-    {
-      id: 7,
-      name: "Arjun Gupta",
-      location: "Chennai",
-      review:
-        "Impressed with their innovative designs and quality execution. They turned our small space into a beautiful and functional home.",
-      rating: 5,
-      image: "/happy-customer.png",
-      videoLink: null,
+      location: "Kolkata",
     },
   ];
 
@@ -260,17 +232,17 @@ export default function ImprovedReviewsSection2() {
                 <SwiperSlide key={review.id}>
                   <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer transform hover:-translate-y-2 mb-8">
                     {/* Image Section */}
-                    <div className="relative h-48 overflow-hidden">
-                      <Image
+                    {/* <div className="relative h-48 overflow-hidden"> */}
+                    {/* <Image
                         src={review.image}
                         alt={`${review.name} testimonial`}
                         height={1200}
                         width={1200}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
+                      /> */}
 
-                      {/* Play Button Overlay */}
-                      {review.videoLink ? (
+                    {/* Play Button Overlay */}
+                    {/* {review?.videoLink ? (
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                           <button
                             onClick={() => setIsVideoDialogOpen(true)}
@@ -282,15 +254,15 @@ export default function ImprovedReviewsSection2() {
                             />
                           </button>
                         </div>
-                      ) : null}
+                      ) : null} */}
 
-                      {/* Quote Icon */}
-                      <div className="absolute bottom-4 left-4">
+                    {/* Quote Icon */}
+                    {/* <div className="absolute bottom-4 left-4">
                         <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#00776e]">
                           <Quote className="w-5 h-5 text-white" />
                         </div>
-                      </div>
-                    </div>
+                      </div> */}
+                    {/* </div> */}
 
                     {/* Content Section */}
                     <div className="p-6">
@@ -307,9 +279,33 @@ export default function ImprovedReviewsSection2() {
                       </div>
 
                       {/* Review Text */}
-                      <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">
-                        &quot;{review.review}&quot;
-                      </p>
+                      <div className="relative">
+                        <p
+                          onClick={() =>
+                            setReadMoreId((prev) =>
+                              prev === review.id ? -1 : review.id
+                            )
+                          }
+                          className={cn(
+                            "text-gray-600 mb-4 leading-relaxed transition-all duration-300",
+                            readMoreId === review.id ? "" : "line-clamp-3"
+                          )}
+                        >
+                          &quot;{review.review}&quot;
+                        </p>
+                        <ChevronDown
+                          onClick={() =>
+                            setReadMoreId((prev) =>
+                              prev === review.id ? -1 : review.id
+                            )
+                          }
+                          className={cn(
+                            "transition-all p-0.5 duration-300 bg-amber-600 text-white rounded-full",
+                            readMoreId === review.id ? "rotate-180" : ""
+                          )}
+                          size={18}
+                        />
+                      </div>
 
                       {/* Customer Info */}
                       <div className="border-t border-gray-100 pt-4">

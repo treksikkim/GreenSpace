@@ -14,6 +14,7 @@ export interface GalleryItem {
   category: string;
   title: string;
   description: string;
+  slug?: string;
 }
 
 export interface Category {
@@ -48,4 +49,29 @@ export interface IOurProject {
 export interface IGetQuoteDialog<T = undefined> {
   isOpen: boolean;
   extraValue?: T;
+}
+
+export type TVideoState = "playing" | "pause" | "stop";
+
+export type ResponseApi<T> = {
+  status: number;
+  success: boolean;
+  message: string;
+  key: string;
+  data: T;
+};
+
+export interface GalleryImage {
+  id: string;
+  src: string;
+  alt: string;
+  title?: string;
+  description?: string;
+}
+
+export interface GalleryDialogProps {
+  images: GalleryImage[];
+  isOpen: boolean;
+  onClose: () => void;
+  initialIndex?: number;
 }

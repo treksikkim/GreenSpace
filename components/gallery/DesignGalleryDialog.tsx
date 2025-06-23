@@ -7,7 +7,7 @@ import { RootState } from "@/redux/store";
 import { setGalleryDialog } from "@/redux/slice/galleryDialogSlice";
 import { X } from "lucide-react";
 import { extractYoutubeId } from "@/utils/extractYoutubeId";
-import { categories } from "@/constant";
+import { categories } from "@/app/design-gallery/dg-constant";
 
 const DesignGalleryDialog: React.FC = () => {
   const { galleryItem: selectedMedia, isOpen: isModalOpen } = useSelector(

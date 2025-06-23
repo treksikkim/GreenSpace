@@ -4,11 +4,10 @@ import { Play } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 import LazyVideo from "./LazyVideo";
+import { TVideoState } from "@/types";
 
 export default function VideoViewSection() {
-  const [videoState, setVideoState] = useState<
-    "init" | "playing" | "pause" | "stop"
-  >("stop");
+  const [videoState, setVideoState] = useState<TVideoState>("stop");
 
   return (
     <div className="relative group/videopart min-w-[60%] h-full max-w-[60%] overflow-hidden max-sm:w-full max-sm:max-w-max">
@@ -28,7 +27,7 @@ export default function VideoViewSection() {
             <div className="size-20 relative cursor-pointer">
               <button
                 onClick={() => {
-                  setVideoState("init");
+                  setVideoState("playing");
                 }}
                 className="size-full flex items-center justify-center rounded-full bg-[#ffffffc5] backdrop-blur-3xl"
               >
@@ -36,7 +35,7 @@ export default function VideoViewSection() {
               </button>
               <div
                 onClick={() => {
-                  setVideoState("init");
+                  setVideoState("playing");
                 }}
                 className="size-full absolute top-0 bg-amber-600 rounded-full blur-3xl"
               ></div>
@@ -44,8 +43,9 @@ export default function VideoViewSection() {
           </div>
         ) : (
           <LazyVideo
-            // poster="/our-works.jpg"
             src="/videos/MicrosoftTeams-video.mp4"
+            videostate={videoState}
+            setVideoState={setVideoState}
           />
         )}
 

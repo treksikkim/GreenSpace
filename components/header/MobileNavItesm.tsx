@@ -8,7 +8,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import OpenGetQuoteDialog from "../Utils/OpenGetQuoteDialog";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 
 interface IMobileSidebarProps {
   isOpen: boolean;
@@ -118,8 +117,6 @@ function MobileSidebar({ isOpen, onClose }: IMobileSidebarProps) {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen, onClose]);
 
-  const pathname = usePathname();
-
   return (
     <>
       {/* Backdrop */}
@@ -143,8 +140,7 @@ function MobileSidebar({ isOpen, onClose }: IMobileSidebarProps) {
           <div className="flex items-center justify-between p-6 border-b border-amber-100">
             <Image
               className="w-[9rem]"
-              // src={"/logo2.png"}
-              src={pathname.includes("about-us") ? "/logo2.png" : "/logo3.png"}
+              src={"/logo4.png"}
               height={500}
               width={500}
               alt="Green Space Logo"

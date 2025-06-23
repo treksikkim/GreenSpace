@@ -1,7 +1,6 @@
 import CustomLink from "@/components/CustomLink";
 import DesignGalleryDialog from "@/components/gallery/DesignGalleryDialog";
 import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
-import { categories, galleryItems } from "@/constant";
 import { GalleryItem } from "@/types";
 import { cn } from "@/utils/cn";
 import { extractYouTubeThumbnail } from "@/utils/extractYouTubeThumbnail";
@@ -9,6 +8,7 @@ import { Play } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { categories, galleryItems } from "./dg-constant";
 
 interface IProps {
   searchParams: Promise<{ category: string | undefined }>;
@@ -124,9 +124,7 @@ export default async function GalleryPage({ searchParams }: IProps) {
 
               {filteredItems.length === 0 && (
                 <div className="text-center py-16">
-                  <p className="text-gray-500 text-lg">
-                    No items found
-                  </p>
+                  <p className="text-gray-500 text-lg">No items found</p>
                 </div>
               )}
             </div>

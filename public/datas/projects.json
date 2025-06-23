@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "type": "image",
+    "thumbnail": "/",
+    "category_name": "",
+    "category_slug": "",
+    "title": "",
+    "small_description": "",
+    "src": null,
+    "slug": "",
+    "full_description": "",
+    "prices": ["₹2,50,000"],
+    "points": [
+      "Premium Materials",
+      "2-3 Weeks Completion",
+      "Expert Team",
+      "Award Winning Design"
+    ],
+    "rating": "4.9",
+    "completion_type": "finished-project"
+  }
+]

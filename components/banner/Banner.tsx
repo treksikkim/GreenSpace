@@ -132,7 +132,9 @@ export default function Banner() {
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <ShieldCheck strokeWidth={1} size={18} />
-            <h3 className="font-medium text-xs text-center">1 Year Warranty</h3>
+            <h3 className="font-medium text-xs text-center">
+              2 Years Warranty
+            </h3>
           </div>
           <div className="flex flex-col gap-1 justify-center items-center">
             <Presentation strokeWidth={1} size={18} />

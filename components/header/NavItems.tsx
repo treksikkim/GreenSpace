@@ -14,7 +14,7 @@ function NavListView({ items, wrapperClassName, itemClassName }: INavListView) {
   return (
     <ul
       className={cn(
-        "flex items-center gap-7 font-jost relative max-sm:flex-col",
+        "flex items-center gap-2 font-jost relative max-sm:flex-col",
         wrapperClassName
       )}
     >
@@ -23,12 +23,19 @@ function NavListView({ items, wrapperClassName, itemClassName }: INavListView) {
           <Link
             href={eachItem.slug}
             className={cn(
-              "flex items-center gap-1.5 relative group overflow-hidden",
+              "flex items-center scale-100 py-1.5 gap-1.5 relative group/eachnavlink",
               itemClassName
             )}
           >
-            <div className="bg-amber-300/40 w-[60%] h-[100%] rotate-[45deg] absolute -left-[100%] transition-all duration-[1000ms] group-hover:left-[100%]"></div>
-            <span className="font-[450]">{eachItem.name}</span>
+            {/* <div className="bg-amber-300/40 w-[60%] h-[100%] rotate-[45deg] absolute -left-[100%] transition-all duration-[1000ms] group-hover:left-[100%]"></div> */}
+            <div className="flex items-start flex-col gap-0.5">
+              <span className="h-0 absolute left-0 top-0 bg-[#e6be20] w-[1px] group-hover/eachnavlink:h-full delay-300 transition-all duration-500"></span>
+
+              <span className="h-[1px] bg-[#e6be20] w-0 group-hover/eachnavlink:w-full transition-all duration-500"></span>
+              <span className="font-[450] px-4.5 z-10">{eachItem.name}</span>
+              <span className="h-[1px] bg-[#e6be20] w-0 group-hover/eachnavlink:w-full transition-all duration-500"></span>
+            </div>
+
             {/* {eachItem.submenu && eachItem.submenu.length !== 0 ? (
               <ChevronDown strokeWidth={1} size={20} className="pt-[2px]" />
             ) : null} */}

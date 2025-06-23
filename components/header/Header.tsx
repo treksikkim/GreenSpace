@@ -10,12 +10,9 @@ import Link from "next/link";
 import { cn } from "@/utils/cn";
 import { useDispatch } from "react-redux";
 import { setMobileMenu } from "@/redux/slice/mobileMenuSlice";
-import { usePathname } from "next/navigation";
 
 export default function Header() {
   const dispatch = useDispatch();
-
-  const pathname = usePathname();
 
   return (
     <>
@@ -23,9 +20,9 @@ export default function Header() {
         <div className="wrapper flex items-center justify-between py-3.5">
           <Link href="/">
             <Image
-              className={`${pathname.includes("about-us") ? "w-[15rem]" : "w-[12rem]"}`}
+              className="w-[12rem]"
               alt="Green Space Logo"
-              src={pathname.includes("about-us") ?  "/logo2.png" : "/logo3.png"}
+              src={"/logo.png"}
               height={500}
               width={500}
             />

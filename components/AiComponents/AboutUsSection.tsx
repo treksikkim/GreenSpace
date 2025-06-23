@@ -85,13 +85,12 @@ export default function AboutUsSection() {
                 data-aos-delay="250"
                 className="text-lg text-gray-700 leading-relaxed"
               >
-                Passionately creating personalised designer homes since 2015. It
-                was founded by award-winning architects,{" "}
+                Green Space, Kolkata&apos;s trusted interior designer, has crafted{" "}
                 <span className="font-semibold text-teal-700">
-                  Shezaan Bhojani & Gita Ramanan
-                </span>
-                , who bring together more than two decades of national and
-                international design experience.
+                  72+ residential, office, and kitchen
+                </span>{" "}
+                interiors over 5+ years, delivering personalized and elegant
+                spaces across West Bengal.
               </p>
               {/* <p className="text-gray-600 leading-relaxed">
                 Our commitment to excellence and innovative design solutions has
@@ -111,7 +110,7 @@ export default function AboutUsSection() {
                   <TrendingUp className="w-5 h-5 text-teal-600" />
                 </div>
                 <div className="text-2xl font-bold text-teal-600 mb-1">
-                  <Counter to={346} />+
+                  <Counter to={225} />+
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
                   Succeeded Projects
@@ -127,8 +126,8 @@ export default function AboutUsSection() {
                   <Clock className="w-5 h-5 text-orange-600" />
                 </div>
                 <div className="text-2xl font-bold text-orange-600 mb-1">
-                  <Counter to={24} intervel={100} />/
-                  <Counter to={7} intervel={300} />
+                  <Counter to={24} intervel={42} />/
+                  <Counter to={7} intervel={150} />
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
                   Support Service
@@ -144,7 +143,7 @@ export default function AboutUsSection() {
                   <Users className="w-5 h-5 text-blue-600" />
                 </div>
                 <div className="text-2xl font-bold text-blue-600 mb-1">
-                  <Counter to={24} intervel={110} />+
+                  <Counter to={15} intervel={80} />+
                 </div>
                 <div className="text-sm text-gray-600 font-medium">
                   Years Experience
