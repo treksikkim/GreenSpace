@@ -102,8 +102,8 @@ export const NAV_ITEMS: INav[] = [
   },
   {
     id: 4,
-    name: "Reviews",
-    slug: "#",
+    name: "Customized Kitchen",
+    slug: "/customize-kitchens",
   },
   {
     id: 5,

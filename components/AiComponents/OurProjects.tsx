@@ -145,12 +145,13 @@ export default function OurProjects() {
           </p> */}
           </div>
 
-          <div className="flex items-center gap-3.5 mb-12">
+          <div className="flex items-center gap-3.5 mb-12 overflow-x-auto">
             <CustomLink
               withoutProgress={true}
               scroll={false}
               queryParams={true}
               href={"?type=finished-project"}
+              className="shrink-0"
             >
               <Button
                 className={cn(
@@ -169,6 +170,7 @@ export default function OurProjects() {
               scroll={false}
               queryParams={true}
               href={"?type=work-in-progress"}
+              className="shrink-0"
             >
               <Button
                 className={cn(

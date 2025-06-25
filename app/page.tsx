@@ -9,6 +9,9 @@ import Button from "@/components/Button";
 import OpenGetQuoteDialog from "@/components/Utils/OpenGetQuoteDialog";
 import AOSProvider from "@/components/Utils/AOSProvider";
 import VideoViewSection from "@/components/VideoViewSection";
+import ScrollText from "@/components/ScrollText";
+import { OurClients } from "@/components/OurClients";
+import { OurChannelPartners } from "@/components/OurChannelPartners";
 
 export default function Home() {
   return (
@@ -16,6 +19,8 @@ export default function Home() {
       <div className="space-y-16">
         <Banner />
         <AboutUsSection />
+
+        <ScrollText />
 
         {/* Our Services */}
         <section className="font-jost wrapper space-y-8">
@@ -32,7 +37,7 @@ export default function Home() {
                 data-aos="fade-up"
                 className="max-sm:text-3xl md:text-5xl font-bold mb-4 relative max-sm:mb-0"
               >
-                <span style={{ color: "#00776e" }}>Our Valuable Services</span>
+                <span className="text-[#00776e]">Our Valuable Services</span>
                 <br />
                 <span className="relative">
                   For You
@@ -124,6 +129,10 @@ export default function Home() {
       </section> */}
 
         <ImprovedReviewsSection2 />
+
+        <OurClients />
+
+        <OurChannelPartners />
 
         {/* Gallery Section */}
         {/* <section className="font-jost wrapper space-y-8">
