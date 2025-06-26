@@ -95,11 +95,11 @@ export const NAV_ITEMS: INav[] = [
     name: "About",
     slug: "/about-us",
   },
-  {
-    id: 3,
-    name: "Our Projects",
-    slug: "/our-projects",
-  },
+  // {
+  //   id: 3,
+  //   name: "Our Projects",
+  //   slug: "/our-projects",
+  // },
   {
     id: 4,
     name: "Customized Kitchen",
@@ -108,7 +108,7 @@ export const NAV_ITEMS: INav[] = [
   {
     id: 5,
     name: "Site Services",
-    slug: "#",
+    slug: "/site-services",
   },
   // {
   //   id: 6,
